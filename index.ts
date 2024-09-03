@@ -12,7 +12,8 @@ while(true){
     console.log("2 - Frear");
     console.log("3 - Subir marcha");
     console.log("4 - Descer marcha");
-    console.log("5 - Imprimir dados do veículo");
+    console.log("5 - Calcular consumo de combustível");
+    console.log("6 - Imprimir dados do veículo");
     console.log("0 - Sair");
 
     const opcao = +teclado('Escolha uma opção: ');
@@ -33,6 +34,9 @@ while(true){
             descerMarcha(carro);
             break;
         case 5:
+            calcularConsumo(carro);
+            break;
+        case 6:
             console.table(carro);
             break;
         default:
@@ -76,6 +80,13 @@ function descerMarcha(veiculo: Veiculo): void {
     } else {
         console.log("O veículo já está em ponto morto!");
     }
+}
+
+function calcularConsumo(veiculo: Veiculo): void {
+  const distancia = +teclado('Digite a distância em km: ');
+  const eficienciaCombustivel = +teclado('Digite a eficiência de combustível (km/l): ');
+  const consumoEstimado = distancia / eficienciaCombustivel;
+  console.log(`O consumo estimado de combustível para ${distancia} km é ${consumoEstimado.toFixed(2)} litros.`);
 }
 
 
