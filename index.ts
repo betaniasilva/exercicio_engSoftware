@@ -6,6 +6,7 @@ const teclado = prompt();
 console.log("Criação de veículo");
 const carro: Veiculo = criaVeiculo();
 
+<<<<<<< HEAD
 while (true) {
   console.log("########### MENU ###########");
   console.log("1 - Acelerar");
@@ -38,6 +39,44 @@ while (true) {
     default:
       break;
   }
+=======
+while(true){
+    console.log("########### MENU ###########");
+    console.log("1 - Acelerar");
+    console.log("2 - Frear");
+    console.log("3 - Subir marcha");
+    console.log("4 - Descer marcha");
+    console.log("5 - Calcular consumo de combustível");
+    console.log("6 - Imprimir dados do veículo");
+    console.log("0 - Sair");
+
+    const opcao = +teclado('Escolha uma opção: ');
+    if(opcao === 0){
+        break;
+    }
+    switch (opcao) {
+        case 1:
+            acelerar(carro);
+            break;
+        case 2:
+            frear(carro);
+            break;
+        case 3:
+            subirMarcha(carro);
+            break;
+        case 4:
+            descerMarcha(carro);
+            break;
+        case 5:
+            calcularConsumo(carro);
+            break;
+        case 6:
+            console.table(carro);
+            break;
+        default:
+            break;
+    }
+>>>>>>> 6bfe3035bfec2b030e4c2996fea2fc9c4ede0c1d
 }
 
 console.table(carro);
@@ -117,3 +156,27 @@ function pilotoAutomatico(veiculo: Veiculo): void {
     console.log("Piloto automático desativado. Marcha máxima atingida.");
   }
 }
+<<<<<<< HEAD
+=======
+
+function calcularConsumo(veiculo: Veiculo): void {
+  const distancia = +teclado('Digite a distância em km: ');
+  const eficienciaCombustivel = +teclado('Digite a eficiência de combustível (km/l): ');
+  const consumoEstimado = distancia / eficienciaCombustivel;
+  console.log(`O consumo estimado de combustível para ${distancia} km é ${consumoEstimado.toFixed(2)} litros.`);
+}
+
+
+
+function criaVeiculo(): Veiculo{
+    const veiculo: Veiculo = new Veiculo();
+    veiculo.marca = teclado('Marca: ');
+    veiculo.modelo = teclado('Modelo: ');
+    veiculo.potencia = +teclado('Potência: ');
+    veiculo.numeroMarchas = +teclado('Número de marchas: ');
+    return veiculo;
+}
+
+
+
+>>>>>>> 6bfe3035bfec2b030e4c2996fea2fc9c4ede0c1d
