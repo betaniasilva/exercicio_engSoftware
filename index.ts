@@ -26,6 +26,15 @@ while(true){
         case 2:
             frear(carro);
             break;
+        case 3:
+            subirMarcha(carro);
+            break;
+        case 4:
+            descerMarcha(carro);
+            break;
+        case 5:
+            console.table(carro);
+            break;
         default:
             break;
     }
@@ -51,6 +60,26 @@ function frear(veiculo: Veiculo): void {
     }
   }
 
+  function subirMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
+        veiculo.marchaAtual += 1;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está na marcha mais alta!");
+    }
+}
+
+function descerMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual > 0) {
+        veiculo.marchaAtual -= 1;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("O veículo já está em ponto morto!");
+    }
+}
+
+
+
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
     veiculo.marca = teclado('Marca: ');
@@ -59,5 +88,6 @@ function criaVeiculo(): Veiculo{
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
 }
+
 
 
