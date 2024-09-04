@@ -6,7 +6,6 @@ const teclado = prompt();
 console.log("Criação de veículo");
 const carro: Veiculo = criaVeiculo();
 
-<<<<<<< HEAD
 while (true) {
   console.log("########### MENU ###########");
   console.log("1 - Acelerar");
@@ -39,7 +38,7 @@ while (true) {
     default:
       break;
   }
-=======
+}  
 while(true){
     console.log("########### MENU ###########");
     console.log("1 - Acelerar");
@@ -71,12 +70,11 @@ while(true){
             calcularConsumo(carro);
             break;
         case 6:
-            console.table(carro);
+            imprimirDados(carro);
             break;
         default:
             break;
     }
->>>>>>> 6bfe3035bfec2b030e4c2996fea2fc9c4ede0c1d
 }
 
 console.table(carro);
@@ -156,8 +154,6 @@ function pilotoAutomatico(veiculo: Veiculo): void {
     console.log("Piloto automático desativado. Marcha máxima atingida.");
   }
 }
-<<<<<<< HEAD
-=======
 
 function calcularConsumo(veiculo: Veiculo): void {
   const distancia = +teclado('Digite a distância em km: ');
@@ -167,16 +163,13 @@ function calcularConsumo(veiculo: Veiculo): void {
 }
 
 
-
-function criaVeiculo(): Veiculo{
-    const veiculo: Veiculo = new Veiculo();
-    veiculo.marca = teclado('Marca: ');
-    veiculo.modelo = teclado('Modelo: ');
-    veiculo.potencia = +teclado('Potência: ');
-    veiculo.numeroMarchas = +teclado('Número de marchas: ');
-    return veiculo;
+function imprimirDados(veiculo: Veiculo): void {
+  console.table({
+    Marca: veiculo.marca,
+    Modelo: veiculo.modelo,
+    Potencia: veiculo.potencia + " CV",
+    "Número de Marchas": veiculo.numeroMarchas,
+    "Marcha Atual": veiculo.marchaAtual,
+    Velocidade: veiculo.velocidade + " km/h",
+  });
 }
-
-
-
->>>>>>> 6bfe3035bfec2b030e4c2996fea2fc9c4ede0c1d
