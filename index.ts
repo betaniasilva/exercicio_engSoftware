@@ -33,6 +33,7 @@ while (true) {
       descerMarcha(carro);
       break;
     case 5:
+      imprimirDados(carro);
       console.table(carro);
       break;
     default:
@@ -169,7 +170,6 @@ function imprimirDados(veiculo: Veiculo): void {
     Modelo: veiculo.modelo,
     Potencia: veiculo.potencia + " CV",
     "Número de Marchas": veiculo.numeroMarchas,
-    "Marcha Atual": veiculo.marchaAtual,
     Velocidade: veiculo.velocidade + " km/h",
   });
 }
